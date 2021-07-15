@@ -1,0 +1,101 @@
+<form name=reg action=tester.html onsubmit="return xyz()">   
+    <!-- Username -->
+    Username<input type="text" pattern="[A-Za-z0-9]" placeholder="username" id="us"><br>
+
+     <!-- password contain atleast one number one uppercase and one lowercase letter and atleast eight digit -->
+     Password<input type="password" pattern="(?=.\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password"><br>
+
+    <!-- Email -->
+    Email<input type="email" id="email" placeholder="xyz@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+  
+     <!-- Contact -->
+    Contact<input type="number" id="contact" pattern="[0-9]" placeholder="0987******"><br>
+
+    <!-- Address -->
+    Address <input type="text" id="address" pattern="[A-Za-z0-9](?=.*[A-Z]).{20,}"><br>
+
+    <!-- date of birth -->
+    Date of birth<input type="date" id="dob" min="2000-01-01" max="2020-12-31"><br>
+    <tr><td><td><input type=submit value=submit />
+    </table>
+    </form>
+    <br>
+    <span id=print class=print></span>
+    <script>
+    function xyz()
+        {
+        f=true
+        a=us.value
+        b=password.value
+        c=email.value
+        d=contact.value
+        e=address.value
+        f=dob.value
+        msg="please fill this"
+        if(a.length==0)
+        {
+        msg = msg ;
+        us.innerHTML="*"
+        f=false
+        }
+        else
+        {
+        us.innerHTML=""
+        }
+
+        if(b.length==0)
+        {
+        msg = msg;
+        password.innerHTML="*"
+        f=false
+        }
+        else
+        {
+        password.innerHTML=""
+        }
+        if(c.length==0)
+        {
+        msg = msg;
+        email.innerHTML="*"
+        f=false
+        }
+        else
+        {
+        email.innerHTML=""
+        }
+        if(d.length==0)
+        {
+        msg = msg + "<br> Enter user id";
+        contact.innerHTML="*"
+        f=false
+        }
+        else
+        {
+        contact.innerHTML=""
+        }
+        if(e.length==0)
+        {
+        msg = msg + "<br> Enter user id";
+        address.innerHTML="*"
+        f=false
+        }
+        else
+        {
+        address.innerHTML=""
+        }
+        if(f.length==0)
+        {
+        msg = msg + "<br> Enter user id";
+        dob.innerHTML="*"
+        f=false
+        }
+        else
+        {
+        dob.innerHTML=""
+        }
+        
+        print.innerHTML=msg
+        return f
+        }
+        </script>
+        
